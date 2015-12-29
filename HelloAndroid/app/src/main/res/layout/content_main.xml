@@ -21,8 +21,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/show"
         android:text="Click Me"
+        android:id="@+id/clickMe"
         android:onClick="clickHandler"/>
+
+
     <com.example.laserk.helloandroid.DrawView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="50pt" />
+
 </RelativeLayout>

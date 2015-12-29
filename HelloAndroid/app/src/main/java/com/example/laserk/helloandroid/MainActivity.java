@@ -1,5 +1,6 @@
 package com.example.laserk.helloandroid;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         final ImageView image = new ImageView(this);
         linearMain.addView(image);
         image.setImageResource(images[0]);
+        //anonymous listener
         image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+    //Xml listener subscribe
 public void clickHandler(View source)
 {
     TextView tv=(TextView) findViewById(R.id.show);

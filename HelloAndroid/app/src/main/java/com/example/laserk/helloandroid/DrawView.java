@@ -33,6 +33,7 @@ public class DrawView extends View
         canvas.drawCircle(currentX, currentY, 15, p);
     }
     @Override
+    //Callback
     public boolean onTouchEvent(MotionEvent event)
     {
         currentX =event.getX();

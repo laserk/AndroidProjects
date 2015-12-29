@@ -6,5 +6,15 @@
     android:orientation="vertical"
     >
     <include layout="@layout/content_main" />
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toast1"
+        android:text="Toast1"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toast1"
+        android:id="@+id/toast2"
+        android:text="Toast2"/>
 </LinearLayout>
