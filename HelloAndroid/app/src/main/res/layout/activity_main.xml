@@ -24,4 +24,16 @@
         android:layout_below="@id/toast1"
         android:id="@+id/toast2"
         android:text="Toast2"/>
+    <EditText
+        android:layout_width="40pt"
+        android:layout_height="20pt"
+        android:text="0"
+        android:id="@+id/calEdit"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calEdit"
+        android:id="@+id/calThread"
+        android:onClick="ClickCal"
+        android:text="calThread"/>
 </LinearLayout>

@@ -2,10 +2,12 @@ package com.example.laserk.helloandroid;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,12 +22,28 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.ajax,
             R.drawable.html,};
     int currentImg = 0;
+    EditText et;
+    caseThread cTh;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        et=(EditText) findViewById(R.id.calEdit);
+        cTh=new caseThread(MainActivity.this);
+        cTh.start();
         InitialImageView();
         InitialToasts();
+
+
+    }
+    public void ClickCal(View source)
+    {
+        Message msg=new Message();
+        msg.what=0x123;
+        Bundle bundle=new Bundle();
+        bundle.putInt("upper",Integer.parseInt(et.getText().toString()));
+        msg.setData(bundle);
+        cTh.mHandler.sendMessage(msg);
     }
 
     private void InitialToasts() {
