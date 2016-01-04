@@ -6,13 +6,17 @@
     android:orientation="vertical"
     >
     <include layout="@layout/content_main" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="60pt"
-        android:editable="false"
-        android:cursorVisible="false"
-        android:textSize="12pt"
-        android:id="@+id/txt"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ActStart"
+        android:text="StartActivity"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ActFinish"
+        android:text="FinishActivity"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
