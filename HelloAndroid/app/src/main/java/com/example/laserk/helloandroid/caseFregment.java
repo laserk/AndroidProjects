@@ -15,12 +15,7 @@ import android.widget.TextView;
  */
 public class caseFregment extends Fragment {
     final String TAG ="==Fregment TAG==";
-    @Override
-    public void onAttach(Activity activity)
-    {
-        super.onAttach(activity);
-        Log.d(TAG, "--onAttch--");
-    }
+
     @Override
     public void onDetach()
     {

@@ -1,5 +1,6 @@
 package com.example.laserk.helloandroid;
 
+import android.content.ComponentName;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     final String TAG="--Activity TAG--";
     EditText et;
     caseThread cTh;
-    Button btnFinish,btnStart;
+    Button btnFinish,btnStart,btnSecond;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         btnStart.setOnClickListener(new onStartActivity());
         btnFinish=(Button)findViewById(R.id.ActFinish);
         btnFinish.setOnClickListener(new onFinishActivity());
+        btnSecond=(Button)findViewById(R.id.SecondAct);
+        btnSecond.setOnClickListener(new onStartSecondActivity());
     }
 
     public void ClickCal(View source)
@@ -128,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     private void InitialImageView() {
         //imageView
         LinearLayout linearMain = (LinearLayout) findViewById(R.id.root);
@@ -151,6 +155,17 @@ public class MainActivity extends AppCompatActivity {
         tv.setText("Hello Android - " + new java.util.Date());
     }
 
+    class onStartSecondActivity implements View.OnClickListener
+    {
+        @Override
+        public void onClick(View v){
+            ComponentName compName =new ComponentName(MainActivity.this,SecondActivity.class);
+            Intent intent=new Intent();
+            intent.setComponent(compName);
+            startActivity(intent);
+        }
+
+    }
     class onStartActivity implements View.OnClickListener
     {
 
