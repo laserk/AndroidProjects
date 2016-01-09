@@ -17,6 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    final static String THIRD_ACTION="Third_actions";
+    final static String THIRD_CATEGORIES_1="Third_category1";
+    final static String THIRD_CATEGORIES_2="Third_categorys";
     int [] images =new int[]{
             R.drawable.java,
             R.drawable.javaee,
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     final String TAG="--Activity TAG--";
     EditText et;
     caseThread cTh;
-    Button btnFinish,btnStart,btnSecond;
+    Button btnFinish,btnStart,btnSecond,btnThird;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +51,17 @@ public class MainActivity extends AppCompatActivity {
         btnFinish.setOnClickListener(new onFinishActivity());
         btnSecond=(Button)findViewById(R.id.SecondAct);
         btnSecond.setOnClickListener(new onStartSecondActivity());
+        btnThird=(Button)findViewById(R.id.ThirdAct);
+        btnThird.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setAction(MainActivity.THIRD_ACTION);
+                intent.addCategory(MainActivity.THIRD_CATEGORIES_1);
+                startActivity(intent);
+            }
+        });
     }
 
     public void ClickCal(View source)
